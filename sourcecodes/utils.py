@@ -3,17 +3,16 @@ import ast
 is_python_type = lambda attribute : type(getattr(ast, attribute)) == type
 is_ast_node = lambda attribute : issubclass(getattr(ast, attribute), ast.AST)
 
+PYTHON_AST_ATTRIBUTES = ast.__dir__()
+PYTHON_AST_NODES = [
+    attribute for attribute in PYTHON_AST_ATTRIBUTES
+    if is_python_type(attribute) and is_ast_node(attribute)
+]
 
 class AstCustomVisitor(ast.NodeVisitor):
-    PYTHON_AST_ATTRIBUTES = ast.__dir__()
-    PYTHON_AST_NODES = [
-        attribute for attribute in PYTHON_AST_ATTRIBUTES
-        if is_python_type(attribute) and is_ast_node(attribute)
-    ]
-
     def __init__(self, *args, **kwargs):
         super().__init__()
-        self.ast_nodes_count = { node : 0 for node in self.PYTHON_AST_NODES }
+        self.ast_nodes_count = { node : 0 for node in PYTHON_AST_NODES }
 
     @property
     def encoding(self):
