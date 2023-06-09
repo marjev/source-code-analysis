@@ -1,12 +1,12 @@
 import os
 
-import pickle
 from minisom import MiniSom
+import pickle
 
-from sourcecodeanalysis.settings import BASE_DIR
+from source_code_analysis.settings import BASE_DIR
 
 
-SOM_PATH = os.path.join(BASE_DIR, './selforganizingmap/som.p')
+SOM_PATH = os.path.join(BASE_DIR, './self_organizing_map/som.p')
 
 
 class SomGenerator(object):

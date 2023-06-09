@@ -4,7 +4,7 @@ from django.contrib.postgres.fields import ArrayField
 from django.db import models
 
 from .utils import AstCustomVisitor, PYTHON_AST_NODES
-from selforganizingmap.self_organizing_map import SomGenerator
+from self_organizing_map.self_organizing_map import SomGenerator
 
 class SourceCode(models.Model):
     location = ArrayField(models.IntegerField(), size=2)

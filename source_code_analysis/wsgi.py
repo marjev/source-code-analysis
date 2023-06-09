@@ -1,5 +1,5 @@
 """
-WSGI config for sourcecodeanalysis project.
+WSGI config for source_code_analysis project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'sourcecodeanalysis.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'source_code_analysis.settings')
 
 application = get_wsgi_application()

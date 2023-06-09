@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class SourcecodesConfig(AppConfig):
+class SourceCodesConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'sourcecodes'
+    name = 'source_codes'
